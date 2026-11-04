@@ -11,10 +11,10 @@
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#EEF1F5; --line:#DDE2EA;
   --ink:#1A2340; --text:#2B3445; --muted:#64748B;
-  --navy:#1A2340; --navy-2:#263155; --brand:#EC0734; --pillbg:#7D889C;
+  --navy:#1A2340; --navy-2:#263155; --brand:#1A2340; --pillbg:#7D889C;
   --red:#D0021B; --red-bg:#FDE8EB; --amber:#A36F00; --amber-bg:#FFF5D6;
   --green:#088A40; --green-bg:#E3F7EA; --done:#1A2340; --done-bg:#E4E8F1;
-  --link:#1D4ED8;
+  --link:#1A2340;
   color-scheme:light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -26,7 +26,7 @@
     --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
     --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
     --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-    --link:#8DB2FF; color-scheme:dark;
+    --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
@@ -34,7 +34,7 @@
   --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
   --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
   --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-  --link:#8DB2FF; color-scheme:dark;
+  --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .logo{height:44px;width:auto;display:block;margin-bottom:22px}
 .kicker{font-size:13px;font-weight:600;letter-spacing:.04em;color:#C9D1E3;margin:0 0 4px}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0;color:#fff;font-weight:700}
-h1 span{display:block;color:var(--brand)}
+h1 span{display:block;color:#9FB3D9}
 .sub{margin:10px 0 0;color:#C9D1E3;font-size:14px;max-width:560px}
 .totals{display:flex;gap:10px;flex-wrap:wrap}
 .pill{border-radius:6px;padding:8px 14px;font-weight:600;font-size:13px;white-space:nowrap;background:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.12)}
@@ -96,7 +96,7 @@ section:first-of-type{margin-top:0}
 .front ul{margin:0;padding-left:18px;font-size:13.5px}
 .front li{margin:2px 0}
 .front .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:8px 14px}
-.front .btn:hover{background:var(--brand)}
+.front .btn:hover{background:#2E3B5E}
 
 /* Cards de status no formato dos slides */
 .attn{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
@@ -163,7 +163,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .quick h2::before{display:none}
 .quick p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
 .quick .go2{background:var(--navy);color:#fff;border-radius:6px;padding:10px 18px;font-weight:600;font-size:14px;white-space:nowrap}
-.quick:hover .go2{background:var(--brand)}
+.quick:hover .go2{background:#2E3B5E}
 .gridc{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
 .gcard{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--text);transition:box-shadow .12s ease,transform .12s ease}
 .gcard:hover{box-shadow:0 6px 18px rgba(26,35,64,.14);transform:translateY(-1px)}
@@ -194,7 +194,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .kpi .chips{margin-top:6px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:9px 16px}
-.btn:hover{background:var(--brand)}
+.btn:hover{background:#2E3B5E}
 .btn.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
 .btn.alt:hover{background:var(--surface);border-color:var(--ink)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
@@ -262,24 +262,24 @@ h2.sec{margin-top:6px}
 </div>
 <nav class="topnav" aria-label="Navegação do portfólio"><div class="in"><a href="index.html">Portfólio</a><a href="metas.html">Projetos metas</a><a href="comercial.html">Projetos comerciais</a><a href="poc.html">POC</a><a href="outros.html" aria-current="page">Outros projetos</a><a href="concluidos.html">Projetos concluídos</a><a href="it-security.html">IT Security</a><a href="ecommerce.html">E-commerce</a><a href="portal-csc.html">Portal CSC</a><a href="todos.html">Todos os projetos</a></div></nav>
 <div class="wrap">
-<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>5</b></div><div class="kpi"><small>Avanço médio</small><b>96%</b> <span style="font-size:12px;font-weight:500;color:var(--muted)">(2 de 5 com avanço informado)</span></div><div class="kpi"><small>Situação</small><div class="chips" style="margin-top:6px"><span style="background:var(--green-bg);color:var(--green)">2 em linha</span><span style="background:var(--surface-2);color:var(--muted)">3 sem status</span></div></div></div><h2 class="sec" style="margin-top:22px">Projetos do grupo</h2><p class="hint">Resumo, status e acesso ao material de cada projeto no SharePoint.</p><div class="pgrid"><article class="pcard" id="inteligencia-de-mercado" style="--c:var(--green);--bg-c:var(--green-bg)">
-  <div class="top"><h3>Inteligência de Mercado</h3><span class="pct">93%</span></div>
-  <div class="bar"><i style="width:93%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Em linha</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atrasado</span></div><i style="background:#E30613"></i></div><div class="ind"><div><small>Orçamento</small><span>–</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Base do ambiente entregue: reunião com a área, levantamento de escopo, análise estrutural, criação e homologação do ambiente e da arquitetura, validação de dados e campos, Matriz Adquirida (tabela, interface e homologação), Matriz Conhecimento e Matriz Parâmetros (tabela e interface), licença Power BI. GMUD concluída, com data reprogramada para 08/10. Em andamento: sincronismo das tabelas com o DW. Realizado: 93%. Restam 7%: sincronismo com o DW, conexão com a IA e go-live, previsto para 30/10. Atraso de cronograma: a GMUD foi replanejada de 31/08 para 21/09 e depois para 08/10, e o término passou de Set/26 para depois dessa data.</p><div class="atnbox" style="--c:var(--green)"><b>⚠ Ponto de atenção</b><ul class="atn"><li>Sincronismo com o DW ainda em andamento (impacto alto).</li><li>Conexão com a IA depende de integração ainda não realizada e da liberação de acesso à IA da Anthropic (Claude).</li></ul></div><p class="who">Responsável: Cristiano · Apoio: Jean</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/CMV-Automa%C3%A7%C3%A3o-copy.aspx?d=wb9a5116cf33e4856b2a92f54221ff299&amp;csf=1&amp;web=2&amp;share=IQBsEaW5PvNWSLKpL1QiH_KZAT9eHdl-MbFbXwCFPccDXkk&amp;e=2hwU5c" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="atualizacao-tabela-de-precos" style="--c:var(--green);--bg-c:var(--green-bg)">
-  <div class="top"><h3>Atualização Tabela de Preços</h3><span class="pct">99%</span></div>
-  <div class="bar"><i style="width:99%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Em linha</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>R$ 7.500,00 aprovado + R$ 1.616,00 projetados</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Desenhos da solução, desenvolvimentos em Salesforce, Protheus e Fluig concluídos (100% cada). GMUD de 13/10 realizada e atualização piloto de uma tabela de preço. Avanço de 99%. Período previsto maio a set/26; o término passou para out/26, com go-live em 11/11, por causa da homologação de processamento. Próximas entregas: treinamento dos usuários em 05 e 06/11, GMUD de melhoria de performance em 10/11, go-live em 11/11 e acompanhamento do piloto, ajustes e hypercare (14 h previstas).</p><div class="atnbox" style="--c:var(--green)"><b>⚠ Ponto de atenção</b><ul class="atn"><li>Adoção pelos usuários (risco).</li><li>Estabilidade na virada: GMUD de melhoria de performance no dia 10/11, véspera do go-live (risco).</li><li>Integração entre Fluig, Protheus e Salesforce validada apenas em uma tabela piloto (risco).</li><li>Divergência de datas: término previsto para set/26 passou para out/26, com go-live em 11/11.</li></ul></div><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/WMS-SILT-S%C3%8ANIOR-copy(1).aspx?d=wdb581153e8864c7ca2309d76b445c1d0&amp;csf=1&amp;web=2&amp;share=IQBTEVjbhuh8TKIwnXa0RcHQAXTyCYf0tqjHbcznLyXF0iE&amp;e=bb4r4h" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="reforma-tributaria" style="--c:var(--muted);--bg-c:var(--surface-2)">
-  <div class="top"><h3>Reforma Tributária</h3><span class="pct nd">n/d</span></div>
-  
-  <div class="tags"><span class="tag st">Sem status</span></div><p><b style="color:var(--ink)">Status atual:</b> Marcos da 1ª fase concluídos: assessment com a Marins Bertoldi, implantação do IVA dual (destaque de IBS e CBS), treinamentos do novo Configurador, atualização/configuração do sistema para a 1ª fase, go-live da transição/transmissão IBS e CBS e pré-go-live da transição IVA. Substituição das TES pelo Configurador de tributos: Houp e Toyama BR concluídos; TYAM, AquaBrazil e Nordtech em andamento (90%). Próximos passos (a definir com a fase 2 da Marins): agendas adicionais de validação do Fiscal, alinhamento contábil final com MBA e SMS, GMUD em dez/26 e go-live do Configurador (substituição das TES) em 31/10/2026.</p><div class="atnbox" style="--c:var(--muted)"><b>⚠ Ponto de atenção</b><ul class="atn"><li>A área solicitou mais cenários de teste para TYAM, AquaBrazil e Nordtech.</li><li>A área solicitou uma validação extra do fluxo, incluindo a área de DIMPEX.</li></ul></div><p class="who">Responsável: André · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/DW-Comercial-copy.aspx?d=w0b848492610b4384b4c5b76861d97650&amp;csf=1&amp;web=2&amp;share=IQCShIQLC2GEQ7TFt2hh2XZQAQRV4KoAjM3MDjY8pcf-5hI&amp;e=rEYgFN" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="data-engineering-controladoria" style="--c:var(--muted);--bg-c:var(--surface-2)">
-  <div class="top"><h3>Data Engineering Controladoria</h3><span class="pct nd">n/d</span></div>
-  
-  <div class="tags"><span class="tag st">Sem status</span></div><p class="empty-note">A página do projeto ainda não tem dados preenchidos.</p><p class="who">Responsável: Cristiano · Apoio: Geovanna, Jean, Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/Atualiza%C3%A7%C3%A3o-Tabela-de-Pre%C3%A7os-copy.aspx?d=wbc7ee4ea6e9446449d2db41b78f3ab1c&amp;csf=1&amp;web=2&amp;share=IQDq5H68lG5ERp0ttBt486scAcnnvEM460diDJmln6xXk0o&amp;e=nIEbET" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="reforma-tributaria-outros-sistemas" style="--c:var(--muted);--bg-c:var(--surface-2)">
+<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>5</b></div><div class="kpi"><small>Avanço médio</small><b>78%</b> <span style="font-size:12px;font-weight:500;color:var(--muted)">(4 de 5 com avanço informado)</span></div><div class="kpi"><small>Situação</small><div class="chips" style="margin-top:6px"><span style="background:#E6F0FF;color:#1D6FE0">2 em linha</span><span style="background:#FFF4D6;color:#E5A500">1 atenção / alerta</span><span style="background:#FDE8EB;color:#D0021B">1 atrasado</span><span style="background:#EEF1F5;color:#5B6478">1 sem cronograma</span></div></div></div><h2 class="sec" style="margin-top:22px">Projetos do grupo</h2><p class="hint">Resumo, status e acesso ao material de cada projeto no SharePoint.</p><div class="pgrid"><article class="pcard" id="inteligencia-de-mercado" style="--c:#D0021B;--bg-c:#FDE8EB">
+  <div class="top"><h3>Inteligência de Mercado</h3><span class="pct" style="color:#D0021B">93%</span></div>
+  <div class="bar"><i style="width:93%;background:#D0021B"></i></div>
+  <div class="tags"><span class="tag st">Crítico / atrasado</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atrasado</span></div><i style="background:#E30613"></i></div><div class="ind"><div><small>Orçamento</small><span>–</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Atrasado no cronograma, com 93% de avanço. Sincronismo com o DW em andamento e conexão com a IA pendente. Go-live previsto para 30/10.</p><div class="atnbox" style="--c:#D0021B"><b>⚠ Ponto de atenção</b><ul class="atn"><li>Sincronismo com o DW ainda em andamento (impacto alto).</li><li>Conexão com a IA depende de integração e da liberação de acesso à IA (Claude).</li></ul></div><p class="who">Responsável: Cristiano · Apoio: Jean</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/CMV-Automa%C3%A7%C3%A3o-copy.aspx?d=wb9a5116cf33e4856b2a92f54221ff299&amp;csf=1&amp;web=2&amp;share=IQBsEaW5PvNWSLKpL1QiH_KZAT9eHdl-MbFbXwCFPccDXkk&amp;e=2hwU5c" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="data-engineering-controladoria" style="--c:#5B6478;--bg-c:#EEF1F5">
+  <div class="top"><h3>Data Engineering Controladoria</h3><span class="pct" style="color:#5B6478">69%</span></div>
+  <div class="bar"><i style="width:69%;background:#5B6478"></i></div>
+  <div class="tags"><span class="tag st">Crítico / atrasado</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>–</span></div><i style="background:#9AA3B5"></i></div><div class="ind"><div><small>Orçamento</small><span>Alerta</span></div></div><div class="ind"><div><small>Qualidade</small><span>Alerta</span></div><i style="background:#FFC000"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Fases 1 a 4 concluídas (DW, base da Controladoria e contabilidade). Fases 5 a 7 em andamento. Encerramento previsto para dez/26.</p><p class="who">Responsável: Cristiano · Apoio: Geovanna, Jean, Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/Atualiza%C3%A7%C3%A3o-Tabela-de-Pre%C3%A7os-copy.aspx?d=wbc7ee4ea6e9446449d2db41b78f3ab1c&amp;csf=1&amp;web=2&amp;share=IQDq5H68lG5ERp0ttBt486scAcnnvEM460diDJmln6xXk0o&amp;e=nIEbET" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="reforma-tributaria" style="--c:#1D6FE0;--bg-c:#E6F0FF">
+  <div class="top"><h3>Reforma Tributária</h3><span class="pct" style="color:#1D6FE0">50%</span></div>
+  <div class="bar"><i style="width:50%;background:#1D6FE0"></i></div>
+  <div class="tags"><span class="tag st">Em linha</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Fase 1 concluída (estratégia, IVA dual e go-live IBS/CBS). Houp e Toyama BR com TES concluídas; TYAM, AquaBrazil e Nordtech em 90%.</p><div class="atnbox" style="--c:#1D6FE0"><b>⚠ Ponto de atenção</b><ul class="atn"><li>Mais cenários de teste solicitados para TYAM, AquaBrazil e Nordtech.</li><li>Validação extra do fluxo, incluindo DIMPEX.</li></ul></div><p class="who">Responsável: André · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/DW-Comercial-copy.aspx?d=w0b848492610b4384b4c5b76861d97650&amp;csf=1&amp;web=2&amp;share=IQCShIQLC2GEQ7TFt2hh2XZQAQRV4KoAjM3MDjY8pcf-5hI&amp;e=rEYgFN" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="reforma-tributaria-outros-sistemas" style="--c:#E5A500;--bg-c:#FFF4D6">
   <div class="top"><h3>Reforma Tributária – Outros Sistemas</h3><span class="pct nd">n/d</span></div>
   
-  <div class="tags"><span class="tag st">Sem status</span></div><p class="empty-note">A página do projeto ainda não tem dados preenchidos.</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/Reforma-Tribut%C3%A1ria-copy.aspx?d=wb657d738bd6e4df58caa76279c5d1347&amp;csf=1&amp;web=2&amp;share=IQA411e2br31TYyqdiecXRNHAUYxqq9i4yUv0H2EdDEV5Ps&amp;e=yETQBF" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article></div><p class="note"><a href="index.html">← Voltar ao portfólio</a> · <a href="todos.html">Ver todos os projetos em tabela →</a></p></section>
+  <div class="tags"><span class="tag st">Em linha</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atenção</span></div><i style="background:#FFC000"></i></div><div class="ind"><div><small>Orçamento</small><span>Atenção</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p class="empty-note">Sem resumo de status na página do projeto.</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/Reforma-Tribut%C3%A1ria-copy.aspx?d=wb657d738bd6e4df58caa76279c5d1347&amp;csf=1&amp;web=2&amp;share=IQA411e2br31TYyqdiecXRNHAUYxqq9i4yUv0H2EdDEV5Ps&amp;e=yETQBF" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="atualizacao-tabela-de-precos" style="--c:#1D6FE0;--bg-c:#E6F0FF">
+  <div class="top"><h3>Atualização Tabela de Preços</h3><span class="pct" style="color:#1D6FE0">99%</span></div>
+  <div class="bar"><i style="width:99%;background:#1D6FE0"></i></div>
+  <div class="tags"><span class="tag st">Em linha</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>R$ 7.500,00 + R$ 1.616,00</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Status atual:</b> Em linha, com 99% de avanço. Salesforce, Protheus e Fluig concluídos; treinamento dos usuários em 05 e 06/11. Go-live em 11/11.</p><div class="atnbox" style="--c:#1D6FE0"><b>⚠ Ponto de atenção</b><ul class="atn"><li>Adoção pelos usuários (risco).</li><li>Estabilidade na virada: GMUD de performance em 10/11, véspera do go-live (risco).</li><li>Integração Fluig, Protheus e Salesforce validada apenas em tabela piloto (risco).</li></ul></div><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:u:/r/sites/PortalTecnologia/SitePages/WMS-SILT-S%C3%8ANIOR-copy(1).aspx?d=wdb581153e8864c7ca2309d76b445c1d0&amp;csf=1&amp;web=2&amp;share=IQBTEVjbhuh8TKIwnXa0RcHQAXTyCYf0tqjHbcznLyXF0iE&amp;e=bb4r4h" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article></div><p class="note"><a href="index.html">← Voltar ao portfólio</a> · <a href="todos.html">Ver todos os projetos em tabela →</a></p></section>
 <footer>
-  <span>Fonte: Leitura das páginas do PMO (SharePoint) em 03/11/2026, do PDF do CSC e da planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
+  <span>Fonte: Leitura das páginas do PMO (SharePoint) e do PDF do CSC em 03/11/2026; planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
   <span class="brandline">JCE SA Brazil | Tecnologia da Informação</span>
 </footer>
 </div>

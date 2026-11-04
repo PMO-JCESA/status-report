@@ -11,10 +11,10 @@
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#EEF1F5; --line:#DDE2EA;
   --ink:#1A2340; --text:#2B3445; --muted:#64748B;
-  --navy:#1A2340; --navy-2:#263155; --brand:#EC0734; --pillbg:#7D889C;
+  --navy:#1A2340; --navy-2:#263155; --brand:#1A2340; --pillbg:#7D889C;
   --red:#D0021B; --red-bg:#FDE8EB; --amber:#A36F00; --amber-bg:#FFF5D6;
   --green:#088A40; --green-bg:#E3F7EA; --done:#1A2340; --done-bg:#E4E8F1;
-  --link:#1D4ED8;
+  --link:#1A2340;
   color-scheme:light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -26,7 +26,7 @@
     --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
     --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
     --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-    --link:#8DB2FF; color-scheme:dark;
+    --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
@@ -34,7 +34,7 @@
   --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
   --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
   --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-  --link:#8DB2FF; color-scheme:dark;
+  --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .logo{height:44px;width:auto;display:block;margin-bottom:22px}
 .kicker{font-size:13px;font-weight:600;letter-spacing:.04em;color:#C9D1E3;margin:0 0 4px}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0;color:#fff;font-weight:700}
-h1 span{display:block;color:var(--brand)}
+h1 span{display:block;color:#9FB3D9}
 .sub{margin:10px 0 0;color:#C9D1E3;font-size:14px;max-width:560px}
 .totals{display:flex;gap:10px;flex-wrap:wrap}
 .pill{border-radius:6px;padding:8px 14px;font-weight:600;font-size:13px;white-space:nowrap;background:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.12)}
@@ -96,7 +96,7 @@ section:first-of-type{margin-top:0}
 .front ul{margin:0;padding-left:18px;font-size:13.5px}
 .front li{margin:2px 0}
 .front .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:8px 14px}
-.front .btn:hover{background:var(--brand)}
+.front .btn:hover{background:#2E3B5E}
 
 /* Cards de status no formato dos slides */
 .attn{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
@@ -163,7 +163,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .quick h2::before{display:none}
 .quick p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
 .quick .go2{background:var(--navy);color:#fff;border-radius:6px;padding:10px 18px;font-weight:600;font-size:14px;white-space:nowrap}
-.quick:hover .go2{background:var(--brand)}
+.quick:hover .go2{background:#2E3B5E}
 .gridc{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
 .gcard{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--text);transition:box-shadow .12s ease,transform .12s ease}
 .gcard:hover{box-shadow:0 6px 18px rgba(26,35,64,.14);transform:translateY(-1px)}
@@ -194,7 +194,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .kpi .chips{margin-top:6px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:9px 16px}
-.btn:hover{background:var(--brand)}
+.btn:hover{background:#2E3B5E}
 .btn.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
 .btn.alt:hover{background:var(--surface);border-color:var(--ink)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
@@ -262,12 +262,12 @@ h2.sec{margin-top:6px}
 </div>
 
 <div class="wrap">
-<section style="margin-top:0"><p class="note" style="margin:0 0 12px"><a href="it-security.html">← Voltar para IT Security</a> · <a href="index.html">Portfólio</a></p><div style="max-width:760px"><article class="pcard" id="mdm-coletores" style="--c:var(--muted);--bg-c:var(--surface-2)">
+<section style="margin-top:0"><p class="note" style="margin:0 0 12px"><a href="it-security.html">← Voltar para IT Security</a> · <a href="index.html">Portfólio</a></p><div style="max-width:760px"><article class="pcard" id="mdm-coletores" style="--c:#5B6478;--bg-c:#EEF1F5">
   <div class="top"><h3>MDM Coletores</h3></div>
   
   <div class="tags"><span class="tag st">On-hold</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>–</span></div><i style="background:#9AA3B5"></i></div><div class="ind"><div><small>Orçamento</small><span>R$ 18.364,25/yr</span></div></div><div class="ind"><div><small>Qualidade</small><span>–</span></div><i style="background:#9AA3B5"></i></div></div><p class="desc">Gestão de dispositivos móveis: MDM Urmobo ADV nos coletores logísticos de Curitiba e Itajaí.</p><div><b style="color:var(--ink);font-size:13px">Resumo</b><ul class="res"><li>Modelo ADV selecionado, com política Kiosk e cerca virtual; funcionalidades: antimalware, web security, rastreamento, LDAP/AD, indicadores e relatórios.</li><li>POC concluída; comercial em negociação (on-hold); após o fechamento, MDM operacional em até 5 dias úteis.</li><li>Próximo movimento: concluir a negociação comercial e iniciar a implantação do MDM ADV.</li></ul></div><p class="who">Responsável: Gilberto Junior · Sponsor: Marlbor Necchio · PO: Helysson Silva</p></article></div></section>
 <footer>
-  <span>Fonte: Leitura das páginas do PMO (SharePoint) em 03/11/2026, do PDF do CSC e da planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
+  <span>Fonte: Leitura das páginas do PMO (SharePoint) e do PDF do CSC em 03/11/2026; planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
   <span class="brandline">JCE SA Brazil | Tecnologia da Informação</span>
 </footer>
 </div>

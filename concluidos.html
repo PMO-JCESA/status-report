@@ -11,10 +11,10 @@
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#EEF1F5; --line:#DDE2EA;
   --ink:#1A2340; --text:#2B3445; --muted:#64748B;
-  --navy:#1A2340; --navy-2:#263155; --brand:#EC0734; --pillbg:#7D889C;
+  --navy:#1A2340; --navy-2:#263155; --brand:#1A2340; --pillbg:#7D889C;
   --red:#D0021B; --red-bg:#FDE8EB; --amber:#A36F00; --amber-bg:#FFF5D6;
   --green:#088A40; --green-bg:#E3F7EA; --done:#1A2340; --done-bg:#E4E8F1;
-  --link:#1D4ED8;
+  --link:#1A2340;
   color-scheme:light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -26,7 +26,7 @@
     --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
     --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
     --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-    --link:#8DB2FF; color-scheme:dark;
+    --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
@@ -34,7 +34,7 @@
   --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
   --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
   --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-  --link:#8DB2FF; color-scheme:dark;
+  --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .logo{height:44px;width:auto;display:block;margin-bottom:22px}
 .kicker{font-size:13px;font-weight:600;letter-spacing:.04em;color:#C9D1E3;margin:0 0 4px}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0;color:#fff;font-weight:700}
-h1 span{display:block;color:var(--brand)}
+h1 span{display:block;color:#9FB3D9}
 .sub{margin:10px 0 0;color:#C9D1E3;font-size:14px;max-width:560px}
 .totals{display:flex;gap:10px;flex-wrap:wrap}
 .pill{border-radius:6px;padding:8px 14px;font-weight:600;font-size:13px;white-space:nowrap;background:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.12)}
@@ -96,7 +96,7 @@ section:first-of-type{margin-top:0}
 .front ul{margin:0;padding-left:18px;font-size:13.5px}
 .front li{margin:2px 0}
 .front .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:8px 14px}
-.front .btn:hover{background:var(--brand)}
+.front .btn:hover{background:#2E3B5E}
 
 /* Cards de status no formato dos slides */
 .attn{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
@@ -163,7 +163,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .quick h2::before{display:none}
 .quick p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
 .quick .go2{background:var(--navy);color:#fff;border-radius:6px;padding:10px 18px;font-weight:600;font-size:14px;white-space:nowrap}
-.quick:hover .go2{background:var(--brand)}
+.quick:hover .go2{background:#2E3B5E}
 .gridc{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
 .gcard{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--text);transition:box-shadow .12s ease,transform .12s ease}
 .gcard:hover{box-shadow:0 6px 18px rgba(26,35,64,.14);transform:translateY(-1px)}
@@ -194,7 +194,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .kpi .chips{margin-top:6px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:9px 16px}
-.btn:hover{background:var(--brand)}
+.btn:hover{background:#2E3B5E}
 .btn.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
 .btn.alt:hover{background:var(--surface);border-color:var(--ink)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
@@ -262,24 +262,24 @@ h2.sec{margin-top:6px}
 </div>
 <nav class="topnav" aria-label="Navegação do portfólio"><div class="in"><a href="index.html">Portfólio</a><a href="metas.html">Projetos metas</a><a href="comercial.html">Projetos comerciais</a><a href="poc.html">POC</a><a href="outros.html">Outros projetos</a><a href="concluidos.html" aria-current="page">Projetos concluídos</a><a href="it-security.html">IT Security</a><a href="ecommerce.html">E-commerce</a><a href="portal-csc.html">Portal CSC</a><a href="todos.html">Todos os projetos</a></div></nav>
 <div class="wrap">
-<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>5</b></div></div><h2 class="sec" style="margin-top:22px">Projetos do grupo</h2><p class="hint">Resumo, status e acesso ao material de cada projeto no SharePoint.</p><div class="pgrid"><article class="pcard" id="import-export" style="--c:var(--done);--bg-c:var(--done-bg)">
-  <div class="top"><h3>Import Export</h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregue fluxo de compras internacionais totalmente integrado entre as áreas envolvidas (Fluig). Roll-out Latam; Brasil via Easy Import Control.</p><div class="tags"><span class="tag plain">Ganho de produtividade</span><span class="tag plain">Governança</span><span class="tag plain">Maior eficiência</span></div><p class="who">Áreas: PCP, DIMPEX, Compras, Presidência</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQrUi0I-9TeeQ5kryPsv9KUkEgUCVzZMSF29L_hNYwh_LdKcLA" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="fluxo-de-produtos" style="--c:var(--done);--bg-c:var(--done-bg)">
-  <div class="top"><h3>Fluxo de Produtos</h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Fev/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregue fluxo de P&amp;D para lançamento de novos produtos (implantação de um processo para a Engenharia no lançamento de novos produtos).</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Ganho de produtividade</li><li>Governança</li><li>Maior eficiência</li><li>Colaboração entre áreas</li></ul></div><p class="who">Áreas: Engenharia P&amp;D</p><p class="who">Responsável: Cristiano · Apoio: Geovanna</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQo4OTLZrHz-TJwkB4KWTlveEgUC3IP8xK0JVBOAKjr6E9_y3Q" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="salesforce" style="--c:var(--done);--bg-c:var(--done-bg)">
-  <div class="top"><h3>Salesforce</h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atenção</span></div><i style="background:#FFC000"></i></div><div class="ind"><div><small>Orçamento</small><span>Atenção</span></div></div><div class="ind"><div><small>Qualidade</small><span>Atenção</span></div><i style="background:#FFC000"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: pacote de melhorias Salesforce 2026 (evolutivas e resolução de problemas).</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>SF-379 Campos OrderOwnerPhoto / AccountOwnerPhoto ao finalizar um pedido</li><li>SF-394 Indicadores: automatizar o rateio do limite de crédito dos clientes</li><li>SF-422 [MDM] e-Commerce</li><li>SF-433 Integração Condição de Pagamento com Aprovação ERP -&gt; Salesforce</li><li>SF-439 Melhoria UX da aprovação em lote, detalhe das cotações</li><li>SF-451 [MDM] Email após conclusão do cadastro</li><li>SF-452 [MDM] Email para Financeiro para status Análise Financeira</li><li>SF-463 DEPS: alterar fluxo de consulta para cliente que não está cadastrado</li><li>SF-467 Incluir % Margem Bruta na tela de aprovação por item (CMV)</li><li>SF-469 Parametrizar exibição contextual de saldo em estoque por empresa e permissão</li><li>SF-470 Preço AquaBrazil e-commerce</li><li>SIBS Metas (base de dados para reloginhos)</li><li>POC Slack</li><li>SF-371 Integração DataFrete</li></ul></div><p class="who">Áreas: Comercial</p><p class="who">Responsável: Cristiano</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQqSbQ1o7IAPRp2skOdVRL4nEgUC3Y8caZS_QCw_pYLOeDZzEw" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="integracao-correios" style="--c:var(--done);--bg-c:var(--done-bg)">
-  <div class="top"><h3>Integração Correios</h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jul/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atrasado</span></div><i style="background:#E30613"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: implantada a integração para envio automático dos arquivos XML das Notas Fiscais faturadas à plataforma Visual SET, permitindo a geração e impressão das etiquetas de expedição conforme os padrões operacionais dos Correios.</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Automatizar o envio dos XMLs de Notas Fiscais faturadas para a Visual SET e correção das etiquetas de envio</li></ul></div><p class="who">Áreas: Logística – Transportes</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQo0GgB1X5nOTLGSjSdkCVC-EgUCA9-3JbV6G71JNS7pp3cmxQ" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="wms-notas-por-di" style="--c:var(--done);--bg-c:var(--done-bg)">
-  <div class="top"><h3>WMS – Notas por DI</h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atenção</span></div><i style="background:#FFC000"></i></div><div class="ind"><div><small>Orçamento</small><span>R$ 17.300,82</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregues novas funcionalidades e processo para possibilitar “startar” a entrada de produtos mesmo com uma DI de vários containers e 1 NF (melhoria no recebimento de containers: 1 DI para várias NFs).</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Ganho de performance no recebimento das mercadorias</li></ul></div><p class="who">Áreas: Logística, PCP, Comércio Exterior</p><p class="who">Responsável: Jean · Apoio: Alisson</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQrBs_lWMihgTZMlYxQ3dS_OEgUCMNbY205JRdKkKekHb0Ubsg" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article></div><p class="note"><a href="index.html">← Voltar ao portfólio</a> · <a href="todos.html">Ver todos os projetos em tabela →</a></p></section>
+<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>5</b></div><div class="kpi"><small>Situação</small><div class="chips" style="margin-top:6px"><span style="background:#E3F7EA;color:#088A40">5 concluído</span></div></div></div><h2 class="sec" style="margin-top:22px">Projetos do grupo</h2><p class="hint">Resumo, status e acesso ao material de cada projeto no SharePoint.</p><div class="pgrid"><article class="pcard" id="import-export" style="--c:#088A40;--bg-c:#E3F7EA">
+  <div class="top"><h3>Import Export</h3><span class="pct" style="color:#088A40">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#088A40"></i></div>
+  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregue fluxo de compras internacionais totalmente integrado entre as áreas envolvidas (Fluig).</p><div class="tags"><span class="tag plain">Ganho de produtividade</span><span class="tag plain">Governança</span><span class="tag plain">Maior eficiência</span></div><p class="who">Áreas: PCP, DIMPEX, Compras, Presidência</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQrUi0I-9TeeQ5kryPsv9KUkEgUCVzZMSF29L_hNYwh_LdKcLA" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="fluxo-de-produtos" style="--c:#088A40;--bg-c:#E3F7EA">
+  <div class="top"><h3>Fluxo de Produtos</h3><span class="pct" style="color:#088A40">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#088A40"></i></div>
+  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Fev/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Em linha</span></div><i style="background:#00B050"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregue fluxo de P&amp;D para lançamento de novos produtos.</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Ganho de produtividade</li><li>Governança</li><li>Maior eficiência</li><li>Colaboração entre áreas</li></ul></div><p class="who">Áreas: Engenharia P&amp;D</p><p class="who">Responsável: Cristiano · Apoio: Geovanna</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQo4OTLZrHz-TJwkB4KWTlveEgUC3IP8xK0JVBOAKjr6E9_y3Q" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="salesforce" style="--c:#088A40;--bg-c:#E3F7EA">
+  <div class="top"><h3>Salesforce</h3><span class="pct" style="color:#088A40">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#088A40"></i></div>
+  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atenção</span></div><i style="background:#FFC000"></i></div><div class="ind"><div><small>Orçamento</small><span>Atenção</span></div></div><div class="ind"><div><small>Qualidade</small><span>Atenção</span></div><i style="background:#FFC000"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: pacote de melhorias Salesforce 2026 (evolutivas e resolução de problemas).</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>SF-379 Campos OrderOwnerPhoto / AccountOwnerPhoto ao finalizar um pedido</li><li>SF-394 Indicadores: automatizar o rateio do limite de crédito dos clientes</li><li>SF-422 [MDM] e-Commerce</li><li>SF-433 Integração Condição de Pagamento com Aprovação ERP -&gt; Salesforce</li><li>SF-439 Melhoria UX da aprovação em lote, detalhe das cotações</li><li>SF-451 [MDM] Email após conclusão do cadastro</li><li>SF-452 [MDM] Email para Financeiro para status Análise Financeira</li><li>SF-463 DEPS: alterar fluxo de consulta para cliente que não está cadastrado</li><li>SF-467 Incluir % Margem Bruta na tela de aprovação por item (CMV)</li><li>SF-469 Parametrizar exibição contextual de saldo em estoque por empresa e permissão</li><li>SF-470 Preço AquaBrazil e-commerce</li><li>SIBS Metas (base de dados para reloginhos)</li><li>POC Slack</li><li>SF-371 Integração DataFrete</li></ul></div><p class="who">Áreas: Comercial</p><p class="who">Responsável: Cristiano</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQqSbQ1o7IAPRp2skOdVRL4nEgUC3Y8caZS_QCw_pYLOeDZzEw" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="integracao-correios" style="--c:#088A40;--bg-c:#E3F7EA">
+  <div class="top"><h3>Integração Correios</h3><span class="pct" style="color:#088A40">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#088A40"></i></div>
+  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jul/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atrasado</span></div><i style="background:#E30613"></i></div><div class="ind"><div><small>Orçamento</small><span>Em linha</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: implantada a integração para envio automático dos XMLs das notas fiscais faturadas à plataforma Visual SET.</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Automatizar o envio dos XMLs de Notas Fiscais faturadas para a Visual SET e correção das etiquetas de envio</li></ul></div><p class="who">Áreas: Logística – Transportes</p><p class="who">Responsável: Cristiano · Apoio: Aldo</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQo0GgB1X5nOTLGSjSdkCVC-EgUCA9-3JbV6G71JNS7pp3cmxQ" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article><article class="pcard" id="wms-notas-por-di" style="--c:#088A40;--bg-c:#E3F7EA">
+  <div class="top"><h3>WMS – Notas por DI</h3><span class="pct" style="color:#088A40">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#088A40"></i></div>
+  <div class="tags"><span class="tag st">Concluído</span><span class="tag plain">Jun/26 – Set/26</span></div><div class="inds"><div class="ind"><div><small>Cronograma</small><span>Atenção</span></div><i style="background:#FFC000"></i></div><div class="ind"><div><small>Orçamento</small><span>R$ 17.300,82</span></div></div><div class="ind"><div><small>Qualidade</small><span>Em linha</span></div><i style="background:#00B050"></i></div></div><p><b style="color:var(--ink)">Entrega:</b> Projeto finalizado: entregues funcionalidades para iniciar a entrada de produtos com uma DI de vários containers e 1 NF.</p><div><b style="color:var(--ink);font-size:13px">Entregas</b><ul class="res"><li>Ganho de performance no recebimento das mercadorias</li></ul></div><p class="who">Áreas: Logística, PCP, Comércio Exterior</p><p class="who">Responsável: Jean · Apoio: Alisson</p><a class="btn" href="https://nordtechmaquinas.sharepoint.com/:p:/s/PortalTecnologia/cQrBs_lWMihgTZMlYxQ3dS_OEgUCMNbY205JRdKkKekHb0Ubsg" target="_blank" rel="noopener noreferrer">Abrir status no SharePoint ↗</a></article></div><p class="note"><a href="index.html">← Voltar ao portfólio</a> · <a href="todos.html">Ver todos os projetos em tabela →</a></p></section>
 <footer>
-  <span>Fonte: Leitura das páginas do PMO (SharePoint) em 03/11/2026, do PDF do CSC e da planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
+  <span>Fonte: Leitura das páginas do PMO (SharePoint) e do PDF do CSC em 03/11/2026; planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
   <span class="brandline">JCE SA Brazil | Tecnologia da Informação</span>
 </footer>
 </div>

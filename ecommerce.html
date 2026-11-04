@@ -11,10 +11,10 @@
 :root{
   --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#EEF1F5; --line:#DDE2EA;
   --ink:#1A2340; --text:#2B3445; --muted:#64748B;
-  --navy:#1A2340; --navy-2:#263155; --brand:#EC0734; --pillbg:#7D889C;
+  --navy:#1A2340; --navy-2:#263155; --brand:#1A2340; --pillbg:#7D889C;
   --red:#D0021B; --red-bg:#FDE8EB; --amber:#A36F00; --amber-bg:#FFF5D6;
   --green:#088A40; --green-bg:#E3F7EA; --done:#1A2340; --done-bg:#E4E8F1;
-  --link:#1D4ED8;
+  --link:#1A2340;
   color-scheme:light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -26,7 +26,7 @@
     --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
     --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
     --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-    --link:#8DB2FF; color-scheme:dark;
+    --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
@@ -34,7 +34,7 @@
   --ink:#E8EDF7; --text:#CDD5E3; --muted:#97A3BA; --pillbg:#3A4664;
   --red:#FF6B7E; --red-bg:#3A1720; --amber:#FFC94D; --amber-bg:#3A2E10;
   --green:#3DDC84; --green-bg:#10301F; --done:#A9BCEB; --done-bg:#232F4D;
-  --link:#8DB2FF; color-scheme:dark;
+  --link:#8DB2FF; --brand:#E8EDF7; color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .logo{height:44px;width:auto;display:block;margin-bottom:22px}
 .kicker{font-size:13px;font-weight:600;letter-spacing:.04em;color:#C9D1E3;margin:0 0 4px}
 h1{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0;color:#fff;font-weight:700}
-h1 span{display:block;color:var(--brand)}
+h1 span{display:block;color:#9FB3D9}
 .sub{margin:10px 0 0;color:#C9D1E3;font-size:14px;max-width:560px}
 .totals{display:flex;gap:10px;flex-wrap:wrap}
 .pill{border-radius:6px;padding:8px 14px;font-weight:600;font-size:13px;white-space:nowrap;background:var(--navy-2);color:#fff;border:1px solid rgba(255,255,255,.12)}
@@ -96,7 +96,7 @@ section:first-of-type{margin-top:0}
 .front ul{margin:0;padding-left:18px;font-size:13.5px}
 .front li{margin:2px 0}
 .front .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:8px 14px}
-.front .btn:hover{background:var(--brand)}
+.front .btn:hover{background:#2E3B5E}
 
 /* Cards de status no formato dos slides */
 .attn{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:12px}
@@ -163,7 +163,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .quick h2::before{display:none}
 .quick p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
 .quick .go2{background:var(--navy);color:#fff;border-radius:6px;padding:10px 18px;font-weight:600;font-size:14px;white-space:nowrap}
-.quick:hover .go2{background:var(--brand)}
+.quick:hover .go2{background:#2E3B5E}
 .gridc{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
 .gcard{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:8px;padding:16px 18px;text-decoration:none;color:var(--text);transition:box-shadow .12s ease,transform .12s ease}
 .gcard:hover{box-shadow:0 6px 18px rgba(26,35,64,.14);transform:translateY(-1px)}
@@ -194,7 +194,7 @@ footer .brandline{color:var(--brand);font-weight:600}
 .kpi .chips{margin-top:6px}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13px;border-radius:6px;padding:9px 16px}
-.btn:hover{background:var(--brand)}
+.btn:hover{background:#2E3B5E}
 .btn.alt{background:var(--surface-2);color:var(--ink);border:1px solid var(--line)}
 .btn.alt:hover{background:var(--surface);border-color:var(--ink)}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
@@ -262,20 +262,20 @@ h2.sec{margin-top:6px}
 </div>
 <nav class="topnav" aria-label="Navegação do portfólio"><div class="in"><a href="index.html">Portfólio</a><a href="metas.html">Projetos metas</a><a href="comercial.html">Projetos comerciais</a><a href="poc.html">POC</a><a href="outros.html">Outros projetos</a><a href="concluidos.html">Projetos concluídos</a><a href="it-security.html">IT Security</a><a href="ecommerce.html" aria-current="page">E-commerce</a><a href="portal-csc.html">Portal CSC</a><a href="todos.html">Todos os projetos</a></div></nav>
 <div class="wrap">
-<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>3</b></div><div class="kpi"><small>Avanço médio</small><b>90%</b></div><div class="kpi"><small>Situação</small><div class="chips" style="margin-top:6px"><span style="background:var(--green-bg);color:var(--green)">3 em linha</span></div></div></div><p class="note" style="margin:6px 0 0">Responsável: José Itamar</p><div class="actions"></div><h2 class="sec" style="margin-top:26px">Pedidos B2B (Abr–Out)</h2><p class="hint">Consolidado de pedidos do e-commerce B2B por mês e por empresa.</p>
+<section style="margin-top:0"><div class="kpis"><div class="kpi"><small>Projetos</small><b>3</b></div><div class="kpi"><small>Avanço médio</small><b>90%</b></div><div class="kpi"><small>Situação</small><div class="chips" style="margin-top:6px"><span style="background:#E6F0FF;color:#1D6FE0">3 em linha</span></div></div></div><p class="note" style="margin:6px 0 0">Responsável: José Itamar</p><div class="actions"></div><h2 class="sec" style="margin-top:26px">Pedidos B2B (Abr–Out)</h2><p class="hint">Consolidado de pedidos do e-commerce B2B por mês e por empresa.</p>
 <div class="cols2"><div class="panel"><h3>Total geral</h3><div class="big">R$ 3,01 mi</div><div style="margin-top:10px"><div class="mrow"><span>Abr</span><div class="bar"><i style="width:1.5%;background:var(--navy)"></i></div><b>R$ 604</b></div><div class="mrow"><span>Mai</span><div class="bar"><i style="width:1.5%;background:var(--navy)"></i></div><b>R$ 22 mil</b></div><div class="mrow"><span>Jun</span><div class="bar"><i style="width:3.0%;background:var(--navy)"></i></div><b>R$ 68 mil</b></div><div class="mrow"><span>Jul</span><div class="bar"><i style="width:3.3%;background:var(--navy)"></i></div><b>R$ 74 mil</b></div><div class="mrow"><span>Ago</span><div class="bar"><i style="width:18.1%;background:var(--navy)"></i></div><b>R$ 405 mil</b></div><div class="mrow"><span>Set</span><div class="bar"><i style="width:100.0%;background:var(--navy)"></i></div><b>R$ 2,24 mi</b></div><div class="mrow"><span>Out</span><div class="bar"><i style="width:9.0%;background:var(--navy)"></i></div><b>R$ 202 mil</b></div></div></div>
-<div class="panel"><h3>Por empresa</h3><div class="emp"><b>Toyama · R$ 1,99 mi</b><span>7.579 (+7 desde 2/10) · Baixa aderência de clientes após o evento Live Show.</span></div><div class="emp"><b>Nordtech · R$ 911,8 mil</b><span>298 (+5 desde 2/10) · Compras recorrentes, com 1 vendedor dedicado ao e-commerce.</span></div><div class="emp"><b>Aquabrazil · R$ 109,9 mil</b><span>1.194 · Sem engajamento comercial após o evento Fishing Show; receita concentrada nos dias do evento.</span></div></div></div><h2 class="sec" style="margin-top:26px">Projetos</h2><p class="hint">Resumo, status e atenções conforme a planilha preenchida pelos responsáveis.</p><div class="pgrid"><article class="pcard" id="motor-de-precos-ecommerce-v2" style="--c:var(--green);--bg-c:var(--green-bg)">
-  <div class="top"><h3><a href="ecommerce-motor-de-precos-ecommerce-v2.html" style="color:inherit;text-decoration:none">Motor de Preços Ecommerce V2</a></h3><span class="pct">99%</span></div>
-  <div class="bar"><i style="width:99%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Em linha</span></div><p>Go-live realizado; rotina de clientes em 19/10.</p><p class="who">Responsável: José Itamar</p><a class="btn" href="ecommerce-motor-de-precos-ecommerce-v2.html">Ver detalhes do projeto →</a></article><article class="pcard" id="ecommerce-b2b-fase-2" style="--c:var(--green);--bg-c:var(--green-bg)">
-  <div class="top"><h3><a href="ecommerce-ecommerce-b2b-fase-2.html" style="color:inherit;text-decoration:none">Ecommerce B2B – Fase 2</a></h3><span class="pct">100%</span></div>
-  <div class="bar"><i style="width:100%;background:var(--c)"></i></div>
-  <div class="tags"><span class="tag st">Em linha</span></div><p>Funcionalidades em produção; Cadastro Full inativo em Toyama.</p><p class="who">Responsável: José Itamar</p><a class="btn" href="ecommerce-ecommerce-b2b-fase-2.html">Ver detalhes do projeto →</a></article><article class="pcard" id="agentic-cx-poc" style="--c:var(--green);--bg-c:var(--green-bg)">
-  <div class="top"><h3><a href="ecommerce-agentic-cx-poc.html" style="color:inherit;text-decoration:none">Agentic CX – POC</a></h3><span class="pct">70%</span></div>
-  <div class="bar"><i style="width:70%;background:var(--c)"></i></div>
+<div class="panel"><h3>Por empresa</h3><div class="emp"><b>Toyama · R$ 1,99 mi</b><span>7.579 (+7 desde 2/10) · Baixa aderência de clientes após o evento Live Show.</span></div><div class="emp"><b>Nordtech · R$ 911,8 mil</b><span>298 (+5 desde 2/10) · Compras recorrentes, com 1 vendedor dedicado ao e-commerce.</span></div><div class="emp"><b>Aquabrazil · R$ 109,9 mil</b><span>1.194 · Sem engajamento comercial após o evento Fishing Show; receita concentrada nos dias do evento.</span></div></div></div><h2 class="sec" style="margin-top:26px">Projetos</h2><p class="hint">Resumo, status e atenções conforme a planilha preenchida pelos responsáveis.</p><div class="pgrid"><article class="pcard" id="motor-de-precos-ecommerce-v2" style="--c:#1D6FE0;--bg-c:#E6F0FF">
+  <div class="top"><h3><a href="ecommerce-motor-de-precos-ecommerce-v2.html" style="color:inherit;text-decoration:none">Motor de Preços Ecommerce V2</a></h3><span class="pct" style="color:#1D6FE0">99%</span></div>
+  <div class="bar"><i style="width:99%;background:#1D6FE0"></i></div>
+  <div class="tags"><span class="tag st">Em linha</span></div><p>Go-live realizado; rotina de clientes em 19/10.</p><p class="who">Responsável: José Itamar</p><a class="btn" href="ecommerce-motor-de-precos-ecommerce-v2.html">Ver detalhes do projeto →</a></article><article class="pcard" id="ecommerce-b2b-fase-2" style="--c:#1D6FE0;--bg-c:#E6F0FF">
+  <div class="top"><h3><a href="ecommerce-ecommerce-b2b-fase-2.html" style="color:inherit;text-decoration:none">Ecommerce B2B – Fase 2</a></h3><span class="pct" style="color:#1D6FE0">100%</span></div>
+  <div class="bar"><i style="width:100%;background:#1D6FE0"></i></div>
+  <div class="tags"><span class="tag st">Em linha</span></div><p>Funcionalidades em produção; Cadastro Full inativo em Toyama.</p><p class="who">Responsável: José Itamar</p><a class="btn" href="ecommerce-ecommerce-b2b-fase-2.html">Ver detalhes do projeto →</a></article><article class="pcard" id="agentic-cx-poc" style="--c:#1D6FE0;--bg-c:#E6F0FF">
+  <div class="top"><h3><a href="ecommerce-agentic-cx-poc.html" style="color:inherit;text-decoration:none">Agentic CX – POC</a></h3><span class="pct" style="color:#1D6FE0">70%</span></div>
+  <div class="bar"><i style="width:70%;background:#1D6FE0"></i></div>
   <div class="tags"><span class="tag st">Em linha</span></div><p>POC 2 em testes; orçamento e aditivo a validar.</p><a class="btn" href="ecommerce-agentic-cx-poc.html">Ver detalhes do projeto →</a></article></div><p class="note"><a href="index.html">← Voltar ao portfólio</a> · <a href="todos.html">Ver todos os projetos em tabela →</a></p></section>
 <footer>
-  <span>Fonte: Leitura das páginas do PMO (SharePoint) em 03/11/2026, do PDF do CSC e da planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
+  <span>Fonte: Leitura das páginas do PMO (SharePoint) e do PDF do CSC em 03/11/2026; planilha das frentes IT Security e E-commerce. Atualizado em 03/11/2026. Os links do SharePoint exigem login da empresa.</span>
   <span class="brandline">JCE SA Brazil | Tecnologia da Informação</span>
 </footer>
 </div>
